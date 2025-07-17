@@ -3,13 +3,14 @@
 ## 1(a)
 There are 2 loops, one inside another. At first we need to work with the inner loop. For inner loop, the value of $j$ is initially 2. After each iteration the value doubles like this.
 
-| no of iterations | $j$                    |     |
-| ---------------- | ---------------------- | --- |
-| $1$              | $2 = 2^1$ |     |
-| $2$              | $4 = 2^2$ |     |
-| $3$              | $8 = 2^3$ |     |
-| ...              | ...                    |     |
-| $x$              | $2^x$      |     |
+| no of iterations | $j$       |
+| ---------------- | --------- |
+| $1$              | $2 = 2^1$ |
+| $2$              | $4 = 2^2$ |
+| $3$              | $8 = 2^3$ |
+| ...              | ...       |
+| $x$              | $2^x$     |
+
 But $j$ ends at the value of $n$ for the worst case. That means $2^x$ is equal to $n$ . $2^x = n$ That is, $log{_2}{n} = x$.
 For a very large input we can write $log{n} = x$. That's how the time complexity of inner loop is $O(log{n})$.
 For outter loop, we can consider the inner loop as a constant operation. So complexity is $O(n)$

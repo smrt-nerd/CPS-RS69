@@ -22,7 +22,7 @@ The loop stops as soon as $i*i > x$. So, $i$ grows up to the value where $i^2$ j
 
 **Total Time Complexity: $O(\sqrt{x})$**
 
-## 2. Container With Most Water : Coding Problem
+### Problem 2: Container With Most Water : Coding Problem
 
 Here, two pointers have been used at the start and end of the height array. Then we calculate the area between them, then we move the pointer at the shorter height inward to try for a higher area. This continues until the pointers meet and the while loop breaks. This method checks all possible containers in one pass, making it very fast compared to the loop inside loop method.
 

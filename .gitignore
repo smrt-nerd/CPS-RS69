@@ -1,0 +1,29 @@
+# Compiled object files and executables for C/C++
+*.o
+*.out
+*.obj
+*.exe
+
+# Java build artifacts
+*.class
+*.jar
+
+# Compiled static/dynamic libraries
+*.so
+*.dll
+*.a
+*.lib
+
+# Build directories (Java, C/C++ IDEs)
+bin/
+build/
+target/
+
+# Core dumps
+core
+
+# Editor/OS-specific files
+*.swp
+*~
+.DS_Store
+Thumbs.db

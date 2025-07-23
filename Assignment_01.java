@@ -1,4 +1,4 @@
-public class Solution {
+public class Assignment_01 {
   public int maxArea(int[] height) {
     int left = 0, right = height.length - 1, maxArea = 0;
     while (left < right) {

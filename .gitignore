@@ -1,16 +1,7 @@
-# C/C++ and Java compiled files
-*.o
-*.obj
-*.out
-*.exe
-*.class
-*.jar
+  # VS Code editor folder
+  .vscode/
+  .cph/
 
-# Common build directories (Java, C/C++ IDEs)
-bin/
-build/
-target/
 
-# VS Code editor folder
-.vscode/
-.cph/
+  input.txt
+  output.txt

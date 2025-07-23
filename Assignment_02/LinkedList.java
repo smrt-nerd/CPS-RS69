@@ -22,17 +22,6 @@ public class LinkedList {
     }
   }
 
-  public void addLast(int item) {
-    Node newNode = new Node(item);
-    if (head == null) {
-      head = tail = newNode;
-    } else {
-      newNode.next = null;
-      tail.next = newNode;
-      tail = newNode;
-    }
-  }
-
   public void addMiddle(int item, int index) {
     Node node = new Node(item);
     Node temp = head;
@@ -45,23 +34,6 @@ public class LinkedList {
       node.next = temp.next;
       temp.next = node;
     }
-  }
-
-  public void removeLast() {
-    Node tempSlow = head;
-    Node tempFast = head.next;
-
-    while (tempFast.next != null) {
-      tempSlow = tempSlow.next;
-      tempFast = tempFast.next;
-    }
-
-    tail = tempSlow;
-    tail.next = null;
-  }
-
-  public void removeFirst() {
-    head = head.next;
   }
 
   public void getKthNodeFromLast(int k) {
@@ -100,5 +72,82 @@ public class LinkedList {
     }
     return sb.toString();
   }
+
+  // added code start
+  public void addLast(int item) {
+    Node newNode = new Node(item);
+    if (head == null) {
+      head = tail = newNode;
+    } else {
+      newNode.next = null;
+      tail.next = newNode;
+      tail = newNode;
+    }
+  }
+
+  public void removeLast() {
+    Node tempSlow = head;
+    Node tempFast = head.next;
+
+    while (tempFast.next != null) {
+      tempSlow = tempSlow.next;
+      tempFast = tempFast.next;
+    }
+
+    tail = tempSlow;
+    tail.next = null;
+  }
+
+  public void removeFirst() {
+    head = head.next;
+  }
+
+  public void reverse() {
+    Node prev = null;
+    Node current = head;
+    Node next;
+    while (current != null) {
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
+    head = prev;
+  }
+
+  public void removeKthNodeFromEnd(int k) {
+    Node tempSlow = head;
+    Node tempFast = head;
+
+    if (head == null) {
+      throw new IllegalStateException();
+    }
+
+    for (int i = 0; i < k - 1; i++) {
+      tempFast = tempFast.next;
+      if (tempFast == null) {
+        throw new IllegalArgumentException();
+      }
+    }
+
+    while (tempFast.next != null) {
+      tempSlow = tempSlow.next;
+      tempFast = tempFast.next;
+    }
+
+    if (tempSlow == head) {
+      removeFirst();
+    } else {
+      Node prev = head;
+      while (prev.next != tempSlow) {
+        prev = prev.next;
+      }
+      prev.next = tempSlow.next;
+      if (tempSlow == tail) {
+        tail = prev;
+      }
+    }
+  }
+  // added code end
 
 }

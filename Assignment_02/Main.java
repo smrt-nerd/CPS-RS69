@@ -12,7 +12,9 @@ public class Main {
     // list.addMiddle(60, 2);
     // list.addLast(60);
     // list.removeLast();
-    list.removeFirst();
+    // list.removeFirst();
+    // list.reverse();
+    list.removeKthNodeFromEnd(2);
     System.out.println(list);
 
     // Find the Kth Node from the last in a LinkedList
